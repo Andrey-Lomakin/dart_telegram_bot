@@ -13,20 +13,12 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: ssh host
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.KEY }}
-          script: whoami
       - name: ssh host 2
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
-          username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           script: |
             cd dart_telegram_bot
