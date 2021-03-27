@@ -10,10 +10,11 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
       - name: ssh host
-      - uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
