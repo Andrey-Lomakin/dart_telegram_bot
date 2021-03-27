@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          run: |
+          script: |
             cd dart_telegram_bot
             git pull
             pub get
