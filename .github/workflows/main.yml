@@ -18,11 +18,9 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
-          username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
-          script: |
-            whoami
-            ls -al
+          script: whoami
       - name: ssh host 2
         uses: appleboy/ssh-action@master
         with:
