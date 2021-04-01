@@ -12,7 +12,6 @@ void main(List<String> arguments) {
   }
 
   final TOKEN = arguments[0];
-  // final int ROOT_USER = int.parse(arguments[1]);
 
   var bot = TeleDart(Telegram(TOKEN), Event());
 

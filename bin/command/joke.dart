@@ -3,9 +3,8 @@ import 'package:http/http.dart';
 
 import '../utils/decode.dart';
 
-
 void joke(TeleDartMessage message) async {
-  String text = 'Не смешно';
+  String text = '';
 
   try {
     var url = Uri.http('www.rzhunemogu.ru', '/RandJSON.aspx', {'CType': '1'});
@@ -17,11 +16,10 @@ void joke(TeleDartMessage message) async {
       text = jsonResponse
           .replaceAll(RegExp(r'{"content":"'), '')
           .replaceAll(RegExp(r'"}'), '');
-    } else {
+      text = 'Сломался сайт (';
     }
   } catch (error) {
-    text = 'Сломался (';
+    text = 'Сломался :(';
   }
-
   message.reply(text, disable_notification: true);
 }
