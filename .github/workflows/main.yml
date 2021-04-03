@@ -25,4 +25,4 @@ jobs:
             git pull
             pub get
             pm2 stop start.sh
-            pm2 start start.sh -- ${{ secrets.BOT_KEY }}
+            pm2 start start.sh

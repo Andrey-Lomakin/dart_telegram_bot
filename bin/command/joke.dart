@@ -16,6 +16,7 @@ void joke(TeleDartMessage message) async {
       text = jsonResponse
           .replaceAll(RegExp(r'{"content":"'), '')
           .replaceAll(RegExp(r'"}'), '');
+    } else {
       text = 'Сломался сайт (';
     }
   } catch (error) {
